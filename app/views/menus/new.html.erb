@@ -1,11 +1,11 @@
-<% content_for :title, "Criar novo item" %>
+<% content_for :title, "Novo Item" %>
 
-<h1>Novo Item</h1>
+<h1>Novo item</h1>
 
 <%= render "form", menu: @menu %>
 
 <br>
 
 <div>
-  <%= link_to "Voltar ao Menu", menus_path %>
+  <%= link_to "Volat ao Menu", menus_path, class: "btn btn-secondary" %>
 </div>

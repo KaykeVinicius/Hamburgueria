@@ -2,9 +2,8 @@
 
 <%= render @menu %>
 
-<div>
-  <%= link_to "Editar item", edit_menu_path(@menu) %> |
-  <%= link_to "Voltar ao menu", menus_path %>
-
-  <%= button_to "Deletar item", @menu, method: :delete %>
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+  <%= link_to "Editar Item", edit_menu_path(@menu), class:"btn btn-success" %> 
+  <%= link_to "Voltar ao Menu", menus_path, class:"btn btn-secondary" %>
+  <%= button_to "Deletar Item", @menu, method: :delete, class:"btn btn-danger" %>
 </div>

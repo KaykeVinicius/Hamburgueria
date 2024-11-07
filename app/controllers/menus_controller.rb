@@ -52,7 +52,7 @@ class MenusController < ApplicationController
     @menu.destroy!
 
     respond_to do |format|
-      format.html { redirect_to menus_path, status: :see_other, notice: "Item ." }
+      format.html { redirect_to menus_path, status: :see_other, notice: "Item excluido com sucesso!." }
       format.json { head :no_content }
     end
   end
