@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Menus" %>
+
+<h1>Menu</h1>
+
+<div id="menus">
+  <% @menus.each do |menu| %>
+    <%= render menu %>
+    <p>
+      <%= link_to "Mostrar Menu", menu %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Criar novo item", new_menu_path %>

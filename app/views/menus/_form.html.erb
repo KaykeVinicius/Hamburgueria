@@ -1,0 +1,32 @@
+<%= form_with(model: menu) do |form| %>
+  <% if menu.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
+
+      <ul>
+        <% menu.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :Titulo, style: "display: block" %>
+    <%= form.text_field :Titulo %>
+  </div>
+
+  <div>
+    <%= form.label :Descricao, style: "display: block" %>
+    <%= form.text_area :Descricao %>
+  </div>
+
+  <div>
+    <%= form.label :Preco, style: "display: block" %>
+    <%= form.text_field :Preco %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
