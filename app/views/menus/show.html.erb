@@ -5,5 +5,28 @@
 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
   <%= link_to "Editar Item", edit_menu_path(@menu), class:"btn btn-success" %> 
   <%= link_to "Voltar ao Menu", menus_path, class:"btn btn-secondary" %>
-  <%= button_to "Deletar Item", @menu, method: :delete, class:"btn btn-danger" %>
+  <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Deletar Item
+  </button>
+</div>
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Deseja realmente deletar este item?</h1>
+      </div>
+      <div class="modal-body">
+        <p>A ação não pode ser desfeita!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <%= button_to "Deletar", @menu, method: :delete, class:"btn btn-danger" %>
+      </div>
+    </div>
+  </div>
 </div>

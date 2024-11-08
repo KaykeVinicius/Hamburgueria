@@ -6,6 +6,7 @@
 <div id="menus">
   <% @menus.each do |menu| %>
     <%= render menu %>
+    <%= link_to "Mostar item", menu, class:"btn btn-info" %>
   <% end %>
 </div>
 
