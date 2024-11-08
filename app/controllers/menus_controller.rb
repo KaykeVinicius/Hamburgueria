@@ -1,4 +1,5 @@
 class MenusController < ApplicationController
+  before_action :authenticate_user!, except: %i[index show]
   before_action :set_menu, only: %i[ show edit update destroy ]
 
   # GET /menus or /menus.json
@@ -21,7 +22,7 @@ class MenusController < ApplicationController
 
   # POST /menus or /menus.json
   def create
-    @menu = Menu.new(menu_params)
+    @menu = current_user.menus.build(menu_params)
 
     respond_to do |format|
       if @menu.save
@@ -66,6 +67,6 @@ class MenusController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def menu_params
-      params.require(:menu).permit(:Titulo, :Descricao, :Preco)
+      params.require(:menu).permit(:Titulo, :Descricao, :Preco, :user_id)
     end
 end
