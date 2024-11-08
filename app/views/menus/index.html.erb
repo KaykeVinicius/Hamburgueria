@@ -2,11 +2,26 @@
 
 <% content_for :title, "Menus" %>
 
-<h1>Menu</h1>
 <div id="menus">
   <% @menus.each do |menu| %>
-    <%= render menu %>
-    <%= link_to "Mostar item", menu, class:"btn btn-info" %>
+    <div class="album py-5 bg-body-tertiary">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col">
+            <div class="card" style="width: 18rem;">
+              <% if menu.image.attached? %>
+                <%= image_tag menu.image, alt: menu.Titulo, class: "menu-image" %>
+              <% else %>
+                <p>Sem imagem disponível</p>
+                <%= render menu %>
+              <% end %>
+              <div class="card-body">
+                <%= link_to "Mostar item", menu, class: "btn btn-info" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
-

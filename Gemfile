@@ -32,3 +32,7 @@ gem "simple_form"
 gem "devise-i18n"
 
 gem "devise", "~> 4.9"
+
+gem "image_processing", "~> 1.13"
+
+gem "htmlbeautifier", "~> 1.4"

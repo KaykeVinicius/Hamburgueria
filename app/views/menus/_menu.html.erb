@@ -1,16 +1,22 @@
 <div id="<%= dom_id menu %>">
-  <p>
-    <strong>Titulo:</strong>
-    <%= menu.Titulo %>
-  </p>
-
-  <p>
-    <strong>Descricao:</strong>
-    <%= menu.Descricao %>
-  </p>
-
-  <p>
-    <strong>Preco:</strong>
-    <%= menu.Preco %>
-  </p>
+  <div class="card" style="width: 18rem;">
+    <% if menu.image.attached? %>
+      <%= image_tag menu.image, alt: menu.Titulo, class: "menu-image" %>
+    <% else %>
+      <p>Sem imagem disponível</p>
+      <%= render menu %>
+    <% end %>
+    <p>
+      <strong>Titulo:</strong>
+      <%= menu.Titulo %>
+    </p>
+    <br>
+    <p>
+      <strong>Descricao:</strong>
+      <%= menu.Descricao %>
+    </p>
+    <p>
+      <strong>Preco:</strong>
+      <%= menu.Preco %>
+    </p>
 </div>
