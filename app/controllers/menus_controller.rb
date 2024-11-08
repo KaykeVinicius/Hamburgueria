@@ -29,6 +29,7 @@ class MenusController < ApplicationController
         format.json { render :show, status: :created, location: @menu }
       else
         format.html { render :new, status: :unprocessable_entity }
+        flash.now[:alert] = "Por favor, corrija os erros abaixo."
         format.json { render json: @menu.errors, status: :unprocessable_entity }
       end
     end
